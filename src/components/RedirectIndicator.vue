@@ -41,7 +41,7 @@ export default defineComponent({
       }
     })
 
-    return { rest, cancelled, cancel }
+    return { rest, cancelled, cancel, go }
   }
 })
 </script>
