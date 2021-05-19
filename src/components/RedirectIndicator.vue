@@ -22,14 +22,7 @@ export default defineComponent({
   setup({ to }) {
     const rest = ref(3)
     const cancelled = ref(false)
-    useAsync(async () => {
-      for (; rest.value; rest.value--) {
-        await wait(1000)
-      }
-      if (!cancelled.value) {
-        go()
-      }
-    })
+
     function cancel() {
       cancelled.value = true
     }
@@ -38,6 +31,16 @@ export default defineComponent({
       await wait(1000)
       location.href = `https://${to}`
     }
+
+    useAsync(async () => {
+      for (; rest.value; rest.value--) {
+        await wait(1000)
+      }
+      if (!cancelled.value) {
+        go()
+      }
+    })
+
     return { rest, cancelled, cancel }
   }
 })
