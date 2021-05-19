@@ -1,4 +1,12 @@
+@font-face {
+  font-family: Cascadia Code;
+  src: local('Cascadia Code'), local('Cascadia-Code'),
+    url(@/assets/CascadiaCode.woff2) format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 .btn {
-  @apply transition hover:ring;
   cursor: pointer;
 }

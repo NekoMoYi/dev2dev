@@ -1,5 +1,5 @@
 <template>
-  <div class="flex min-h-100vh">
+  <div class="app">
     <app-header />
     <app-main />
     <app-footer />
@@ -17,3 +17,9 @@ export default defineComponent({
   components: { AppHeader, AppFooter, AppMain }
 })
 </script>
+
+<style>
+.app {
+  @apply flex min-h-100vh bg-dark-50;
+}
+</style>

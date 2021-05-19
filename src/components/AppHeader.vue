@@ -1,6 +1,8 @@
 <template>
-  <header class="fixed top-0 left-0 right-0 h-16 shadow flex">
-    <div class="inline-flex justify-center items-center p-4 font-mono text-xl">
+  <header class="app-header">
+    <div
+      class="inline-flex justify-center items-center p-4 font-mono text-xl dark:text-light-50"
+    >
       Dev2Dev
     </div>
     <div class="flex-grow" />
@@ -28,3 +30,9 @@ export default defineComponent({
   }
 })
 </script>
+
+<style>
+.app-header {
+  @apply fixed top-0 left-0 right-0 h-16 shadow flex;
+}
+</style>
