@@ -1,0 +1,4 @@
+.btn {
+  @apply transition hover:ring;
+  cursor: pointer;
+}
