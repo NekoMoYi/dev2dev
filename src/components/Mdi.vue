@@ -5,6 +5,7 @@
     role="img"
     aria-hidden="true"
     class="mdi"
+    :style="{ width: size, height: size }"
   >
     <path :d="icon"></path>
   </svg>
@@ -18,16 +19,17 @@ export default defineComponent({
     icon: {
       type: String,
       required: true
+    },
+    size: {
+      type: [Number, String],
+      default: 24
     }
-  },
-  setup(props) {}
+  }
 })
 </script>
 
 <style>
 .mdi {
   fill: currentColor;
-  width: 24px;
-  height: 24px;
 }
 </style>

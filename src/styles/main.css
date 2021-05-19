@@ -8,5 +8,17 @@
 }
 
 .btn {
+  @apply hover:ring;
   cursor: pointer;
+}
+
+.link {
+  @apply text-blue-500;
+  cursor: pointer;
+}
+
+.leave {
+  transition: 1s;
+  transform: translateX(-100%);
+  overflow: hidden;
 }

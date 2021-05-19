@@ -1,9 +1,10 @@
 <template>
   <header class="app-header">
     <div
-      class="inline-flex justify-center items-center p-4 font-mono text-xl dark:text-light-50"
+      class="flex flex-col justify-center items-start p-4 font-mono dark:text-light-50"
     >
-      Dev2Dev
+      <div class="text-xl">Dev2Dev</div>
+      <div class="text-sm opacity-80">Find another developer</div>
     </div>
     <div class="flex-grow" />
     <div class="inline-flex justify-center items-center p-4">
@@ -17,7 +18,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { mdiGithub } from '@mdi/js'
-import Mdi from './Mdi.vue'
+import Mdi from '@/components/Mdi.vue'
 
 export default defineComponent({
   components: { Mdi },
