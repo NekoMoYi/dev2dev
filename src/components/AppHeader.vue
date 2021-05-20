@@ -35,5 +35,6 @@ export default defineComponent({
 <style>
 .app-header {
   @apply fixed top-0 left-0 right-0 h-16 shadow flex;
+  backdrop-filter: blur(5px);
 }
 </style>

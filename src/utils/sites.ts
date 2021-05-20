@@ -25,8 +25,12 @@ function random(skip?: ISite) {
   }
 }
 
-export function recommend(referrer: string) {
+export async function recommend(referrer: string) {
   const cur = match(referrer)
   const next = random(cur)
   return { cur, next }
+}
+
+export async function list() {
+  return sites
 }

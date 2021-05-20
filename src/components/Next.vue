@@ -47,7 +47,7 @@ export default defineComponent({
 
     useAsync(async () => {
       await wait(500)
-      sites.value = recommend(referrer)
+      sites.value = await recommend(referrer)
       loading.value = false
     })
     return { loading, sites }

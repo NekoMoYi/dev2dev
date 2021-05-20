@@ -3,18 +3,28 @@
   "type": "object",
   "properties": {
     "host": {
-      "type": "string"
+      "type": "string",
+      "pattern": "^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]).)+([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9-]*[A-Za-z0-9])$",
+      "description": "site hostname"
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "description": "site name"
     },
     "owner": {
-      "type": "string"
+      "type": "string",
+      "description": "site owner's Github account"
     },
     "logo": {
-      "type": "string"
+      "type": "string",
+      "pattern": "https://[-a-zA-Z0-9@:%._+~#=]{1,256}.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_+.~?&//=]*)",
+      "description": "the url of the site's logo"
+    },
+    "desc": {
+      "type": "string",
+      "description": "site description / motto"
     }
   },
-  "required": ["host", "name", "owner"],
+  "required": ["host", "name", "owner", "logo"],
   "additionalProperties": false
 }

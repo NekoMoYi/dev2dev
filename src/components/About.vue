@@ -1,28 +1,30 @@
 <template>
-  <div class="flex flex-grow flex-1 items-center justify-evenly flex-row">
-    <div class="font-mono flex flex-col items-center justify-center">
-      <div class="text-6xl">Dev2Dev</div>
-      <div clear="text-2xl py-8">
-        Redirecting you to https://github.com/zisu-dev/dev2dev in {{ rest }}s...
+  <div class="flex flex-col flex-grow flex-1 font-mono pt-8">
+    <div class="text-6xl text-center">Dev2Dev</div>
+    <div class="text-2xl text-center">Sites</div>
+    <div class="grid grid-cols-4 m-8 gap-4">
+      <div v-for="site of sites" :key="site.host">
+        <site-card :site="site" />
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { useAsync, wait } from '@/utils/async'
+import { useAsync } from '@/utils/async'
 import { defineComponent, ref } from 'vue'
+import { list } from '@/utils/sites'
+import { ISite } from 'virtual:dev2dev-dataset'
+import SiteCard from '@/components/SiteCard.vue'
 
 export default defineComponent({
+  components: { SiteCard },
   setup() {
-    const rest = ref(3)
+    const sites = ref<ISite[]>([])
     useAsync(async () => {
-      for (; rest.value; rest.value--) {
-        await wait(1000)
-      }
-      location.href = 'https://github.com/zisu-dev/dev2dev'
+      sites.value = await list()
     })
-    return { rest }
+    return { sites }
   }
 })
 </script>
